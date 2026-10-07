@@ -1,0 +1,17 @@
+name: geo402-mcp
+description: IP geolocation for any IP address — returns country, city, ISP, timezone, lat/lon. Pay 0.01 USDC per call on Base mainnet via x402 protocol.
+license: MIT
+tools:
+  - name: lookup_ip
+    description: Look up geolocation for an IP address. Returns country, city, ISP, timezone, latitude, and longitude.
+    inputSchema:
+      type: object
+      properties:
+        ip:
+          type: string
+          description: "IP address to look up (IPv4 or IPv6). Omit to look up caller's IP."
+      required: []
+runtime:
+  name: node
+  transport: http
+  url: https://geo402.amir-alimardani.workers.dev/mcp
